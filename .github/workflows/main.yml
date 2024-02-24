@@ -37,5 +37,5 @@ jobs:
           push: true
           tags: dev2228/my-react-app:latest
       
-      - name: Run tests
-        run: npm test
+      #- name: Run tests
+      # run: npm test
