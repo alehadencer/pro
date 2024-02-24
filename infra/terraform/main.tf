@@ -1,7 +1,7 @@
 #указыввааем провайдера 
 provider "aws" {
-  version = "~> 3.0"
-  region  = var.aws_region
+  version = "~> 1.7.4"
+  region  = "us-east-1"
 }
 
 resource "random_pet" "name_suffix" {}
@@ -63,6 +63,13 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
   viewer_certificate {
     cloudfront_default_certificate = true
+  }
+
+  # Добавляем блок restrictions
+  restrictions {
+    geo_restriction {
+      restriction_type = "none"
+    }
   }
 }
 
