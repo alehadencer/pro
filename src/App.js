@@ -1,22 +1,27 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [redCount, setRedCount] = useState(0);
+  const [blueCount, setBlueCount] = useState(0);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          style={{ backgroundColor: '#ff4646', color: '#fff' }}
+          onClick={() => setRedCount(redCount + 1)}
         >
-          Learn React
-        </a>
+          Red Button
+        </button>
+        <button
+          style={{ backgroundColor: '#007bff', color: '#fff' }}
+          onClick={() => setBlueCount(blueCount + 1)}
+        >
+          Blue Button
+        </button>
+        <p id="clickCountRed">Red Count: {redCount}</p>
+        <p id="clickCountBlue">Blue Count: {blueCount}</p>
       </header>
     </div>
   );
